@@ -167,37 +167,38 @@ export const BookForm: React.FC<BookFormProps> = ({
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
       {/* Form Header (Langkah 3: Format Pesan - Header Identitas Borang) */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 px-6 py-4 text-white flex items-center justify-between">
-        <div>
-          <div className="flex items-center space-x-2">
-            <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 font-semibold">
-              Form Fill-In Dialog
-            </span>
-            <span
-              className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded font-semibold border ${
-                isEditMode
-                  ? 'bg-amber-500/20 text-amber-300 border-amber-400/30'
-                  : 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30'
-              }`}
-            >
-              {isEditMode ? `Mode Edit: ${formData.kode_buku}` : 'Input Baru'}
-            </span>
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 px-5 sm:px-6 py-4 text-white">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 flex-wrap mb-1">
+              <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-500/25 text-indigo-200 border border-indigo-400/30 font-bold whitespace-nowrap shrink-0">
+                Form Fill-In
+              </span>
+              <span
+                className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded font-bold border whitespace-nowrap shrink-0 ${
+                  isEditMode
+                    ? 'bg-amber-500/20 text-amber-300 border-amber-400/40'
+                    : 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40'
+                }`}
+              >
+                {isEditMode ? `Mode Edit: ${formData.kode_buku}` : 'Input Baru'}
+              </span>
+            </div>
+            <h2 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug">
+              Formulir Penyimpanan Data Buku
+            </h2>
           </div>
-          <h2 className="text-base sm:text-lg font-bold mt-1 text-white">
-            Formulir Penyimpanan Data Buku
-          </h2>
-        </div>
 
-        <button
-          type="button"
-          onClick={onFillDemo}
-          className="text-xs bg-white/10 hover:bg-white/20 active:bg-white/30 text-white px-3 py-1.5 rounded-lg border border-white/15 transition flex items-center space-x-1.5 cursor-pointer shadow-xs"
-          title="Isi otomatis dengan contoh buku perpustakaan untuk menguji validasi form"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-          <span className="hidden sm:inline">Isi Contoh Cepat</span>
-          <span className="sm:hidden">Contoh</span>
-        </button>
+          <button
+            type="button"
+            onClick={onFillDemo}
+            className="self-start sm:self-center text-xs bg-white/10 hover:bg-white/20 active:bg-white/30 text-white px-3 py-1.5 rounded-xl border border-white/15 transition flex items-center space-x-1.5 cursor-pointer shadow-xs whitespace-nowrap shrink-0"
+            title="Isi otomatis dengan contoh buku perpustakaan untuk menguji validasi form"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+            <span>Isi Contoh Cepat</span>
+          </button>
+        </div>
       </div>
 
       {/* Prompt / Instruction Banner (Langkah 3: Format Pesan) */}
